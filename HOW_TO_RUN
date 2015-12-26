@@ -1,0 +1,66 @@
+1.	DDNS_NODE
+
+	How to Start xp ddns node
+	
+	a] This will convert all java files to class files i.e. bytecode
+	javac *.java
+	
+	b] This will create stub for Node, stub created from this should be copied to "ddns server admin" and "ddns client"	
+	rmic FileServerImpl
+
+	c] Start the rmiregistry
+	start rmiregistry
+
+	d] run the xp ddns node
+	java FileServerClass ip_address_xp_ddns_node
+
+2]	DDNS SERVER ADMIN
+
+	How to start ddns server admin
+
+	a] set classpath for oracle till classes12.jar
+	"." (dot) indicates current directory.
+	example: CLASSPATH=.;"path till classes12.jar for oracle"
+
+	MAKE SURE YOUU HAVE COPIED stub file from "xp ddns node"
+
+	b] compile ddns server admin
+	javac *.java
+	
+	c] Start ddns server admin
+	java App
+
+	d] Login with username admin and password adminadmin.
+
+	e] Add users and add nodes via server admin GUI.
+
+	f] Attach pendrive to machine, and make sure you have some files with size in MBs and in directories and subdirectories.
+	Choose drive letter and click Store file system.
+
+	Once this is done, you have to start ddns server
+
+3]	DDNS_SERVER
+
+	How to start ddns server
+	a] javac *.java
+
+	b] This will create stub for server, stub created from this should be copied to "ddns client"
+	rmic ddnsImpl
+
+	c] start the rmiregistry
+	start rmiregistry
+
+	d] run ddns server
+	java DDNSserver ip_address_of_ddns_server
+
+	Thes steps will start the ddns server.
+
+4]	XP DDNS CLIENT
+
+	How to start xp ddns node
+
+	a] javac *.java
+
+	b] java App ip_address_of_ddns_server
+
+	c] login with username and password created in step 2] and subpoint e] in DDNS SERVER ADMIN
